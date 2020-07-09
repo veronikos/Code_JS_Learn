@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exersise with JS</title>
+</head>
+<body>
+	<h1>Привет, мир!</h1>
+ 	<p>тут я захотела написать программу с рандомными именами, сначала выпадает имя, и к нему прилагается характеристика. получилось
+ 	<b>Вызови консоль чтобы посмотреть</b></p>
+ 	<script>
+ 		var randomWords = ["Глория", "Вероника", "Марта", "Кевин", "Дора", "Мариетта", "Наталья", "Ксения", "Аня", "Варвара"];
+		var randomIndex = Math.floor(Math.random() * randomWords.length);
+		 console.log("Привет, " + randomWords[randomIndex]);
+		 if (randomWords[randomIndex].length >= 6) {
+			 console.log("Ну и длиннющее же у вас имя!");
+		} else {
+		 console.log("Имя у вас не из длинных");
+		}
+	</script>
+	
+	<!-- Скрипт 2 -->
+
+	<p>тут я выполняю задание по книге, на стр. 101. надо сделать разные ответы для разных имен. Для моего, Мамы и Папы.
+ 	</p>
+	<script>
+ 		var randomWords = ["Глория", "Вероника", "Марта", "Кевин", "Дора", "Мариетта", "Наталья", "Ксения", "Аня", "Варвара", "Папа", "Мама"];
+		var randomIndex = Math.floor(Math.random() * randomWords.length);
+		 console.log("Меня зовут " + randomWords[randomIndex]);
+		 if (randomWords[randomIndex] === "Вероника") {
+			 console.log("Привет мне!");
+		} else if (randomWords[randomIndex] === "Папа") {
+		 console.log("Привет Папа!");
+		} else if (randomWords[randomIndex] === "Мама") {
+		 console.log("Привет Мама!");
+		} else {
+		 console.log("Привет, Новая знакомая");
+		}
+	</script>
+</body>
+</html>
