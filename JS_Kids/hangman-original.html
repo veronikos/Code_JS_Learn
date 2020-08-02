@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hangman Game.</title>
+</head>
+<body>
+	<h1>This is a game from chapter 7</h1>
+
+	<script type="text/javascript">
+	// виселица игра
+	// Создаем массив со словами
+		var words = [
+		 "программа",
+		 "прекрасный",
+		 "оладушек",
+		 "космос",
+		 "голова",
+		 "кактус",
+		 "корова",
+		 "космонавт",
+		 "лейка",
+		 "красота",
+		 "телефон",
+		 "пирог",
+		 "корона",
+		 "крест",
+		 "принтер",
+		 "мышка",
+		 "колонка",
+		 "наушники",
+		 "волга",
+		 "перевозчик",
+		 "самолет",
+		 "тиранозавр",
+		];
+// Выбираем случайное слово
+ 		var word = words[Math.floor(Math.random() * words.length)];
+ // Создаем итоговый массив
+ 			var answerArray = [];
+			 for (var i = 0; i < word.length; i++) {
+			 answerArray[i] = "_";
+			 }
+			 var remainingLetters = word.length;
+			 var remainingChances = 3;
+ // Игровой цикл
+ while (remainingLetters > 0 && remainingChances > 0) {
+ // Показываем состояние игры
+		 alert(answerArray.join(" "));
+ // Запрашиваем вариант ответа
+		 var guess = prompt("Угадайте букву, или нажмите Отмена для выхода из игры.");
+		 alert(remainingChances);
+	 if (guess === null) {
+ // Выходим из игрового цикла
+ 		break;
+ 	} else if (guess.length !== 1) {
+ 		alert("Пожалуйста, введите одиночную букву.");
+ 	} else {
+ 		remainingChances--;
+ 		guess = guess.toLowerCase();
+ // Обновляем состояние игры
+ 		for (var j = 0; j < word.length; j++) {
+		  if (word[j] === guess && answerArray[j] === "_") {
+			 answerArray[j] = guess;
+			 remainingLetters--;
+			 }
+			 }
+ 	   }
+ // Конец игрового цикла
+ }
+// Отображаем ответ и поздравляем игрока
+    alert(answerArray.join(" "));
+    if (guesses > 0) {
+      alert("Отлично! Было загадано слово " + word);
+    } else {
+      alert("Очень плохо! Было загадано слово " + word);
+    }
+	</script>
+
+</body>
+</html>

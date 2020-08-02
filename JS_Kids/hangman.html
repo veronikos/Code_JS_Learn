@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hangman Game.</title>
+</head>
+<body>
+	<h1>This is a game from chapter 7</h1>
+
+	<script type="text/javascript">
+	// виселица игра
+	// Создаем массив со словами
+		var words = [
+		 "программа",
+		 "макака",
+		 "прекрасный",
+		 "оладушек",
+		 "космос",
+		 "голова",
+		 "кактус",
+		 "корова",
+		 "космонавт",
+		 "лейка",
+		 "красота",
+		 "телефон",
+		 "пирог",
+		 "корона",
+		 "крест",
+		 "принтер",
+		 "мышка",
+		 "колонка",
+		 "наушники",
+		 "мед",
+		 "волга",
+		 "перевозчик",
+		 "самолет",
+		 "тиранозавр",
+		];
+	// Выбираем случайное слово
+		var word = words[Math.floor(Math.random() * words.length)];
+	// Создаем итоговый массив
+		var answerArray = [];
+		for (var i = 0; i < word.length; i++) {
+		 answerArray[i] = "_";
+		}
+		var remainingLetters = word.length;
+	// надо рещить баг: отнимает попытки игры только когда буква была угадана. а когда не угадана, не отнимает
+	// решение - поставить отнимание догадки перед циклом
+		var remainingChances = 14;
+		// вот тут должна добавить список букв, которые уже были названы.
+		var guessLetters = [];
+
+	// Игровой цикл
+	while (remainingLetters>0 && remainingChances>0) {
+		  alert(answerArray.join(" "));
+		  alert("у вас осталось " + remainingChances + " попытки" + "Названне буквы " + guessLetters);
+		// Запрашиваем вариант ответа
+		  var guess = prompt ("Угадайте букву, или нажмите Отмена для выхода из игры.");
+		  if (guess === null) {
+		  	break;
+		  }	else if (guess.length !== 1 && guess.toLowerCase() !== word) {
+		  	alert ("Пожалуйста, введите одиночную букву.");
+		  } else if (guess.length > 1 && guess.toLowerCase() === word) {
+		  	alert ("Это чистая победа! Вы угадали слово.");
+		  	break;
+		  } else {
+		  	// починила. отнимает попытку при каждом разе
+		  	remainingChances--;
+		  	// Обновляем состояние игры
+		  	for (var j=0; j < word.length; j++) {
+		  		if (word[j] === guess.toLowerCase()) {
+		  			answerArray[j] = guess.toUpperCase();
+		  			guessLetters = guess.toUpperCase();
+		  			remainingLetters--;
+		  		}
+		  	}
+		  }
+		  // Конец игрового цикла		
+	}
+
+
+// 1) хочу сделать так, чтобы можно было написать слово полностью, и выиграть не вводя по одной букве
+
+	 // else if (guess === word) {
+	 // 	    alert("Отлично! Было загадано слово " + word);
+	 // 	    break;
+	 //      }
+
+// 2) при подсчете попыток, оно удаляет попытку когда я просто нажимаю ок, не введя букву. надо сделать, чтобы в этом случае оно не отнимало попытку
+
+
+ // Отображаем ответ и поздравляем игрока || remainingChances === 0) 
+	 if (remainingLetters>0 && remainingChances > 0 && guess !== word) {
+	 	alert("вы вышли из игры. Было загадано слово " + word);
+	 } else if (remainingLetters>0 && remainingChances === 0 && guess === word) {
+	 	alert(answerArray.join(" "));
+	 	alert("Не хватило попыток. Было загадано слово " + word);
+	 } else if (remainingLetters === remainingLetters && remainingChances > 0 && guess === word) {
+	 	alert("Было загадано слово " + word);
+	 }
+	 	else {
+	 	alert("Отлично! Было загадано слово " + word);
+	 }
+	</script>
+
+</body>
+</html>
