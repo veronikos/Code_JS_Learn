@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="UTF-8">
+ <title>Изучаем DOM</title>
+</head>
+<body>
+ <h1 id="main-heading">Привет, мир!</h1>
+ <p> Slide-up-down</p>
+ <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+ <script>
+	 // var headingElement = document.getElementById("main-heading");
+	 // console.log(headingElement.innerHTML);
+	 // var newHeadingText = prompt("Введите новый заголовок:")
+	 $("h1").fadeOut(1000);
+	$("h1").fadeIn(1000);
+	for (var i = 0; i < 5; i++) {
+		$("h1").show(1000);
+		$("h1").hide(1000);
+		}
+	 // $("body").append("<p>Это новый параграф</p>");
+	 // for (var i = 0; i < 3; i++) {
+		//  var hobby = prompt("Назови одно из своих хобби!");
+		//  $("body").append("<p>" + hobby + "</p>");
+		// }
+ </script>
+</body>
+</html>
