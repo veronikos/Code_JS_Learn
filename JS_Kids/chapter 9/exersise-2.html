@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="UTF-8">
+ <title>Изучаем DOM</title>
+</head>
+<body>
+ <h1 id="main-heading">Привет, мир!</h1>
+ <p> Slide-up-down</p>
+ <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+ <script>
+	
+//exersise 2
+	// for (var i = 0; i < 5; i++) {
+	// 	$("h1").fadeOut(i*1000);
+	// 	$("h1").fadeIn(i*1000);
+	// 	}
+  //alternative variant (from answers on GitHub)
+    // var fadeTime;
+    // for (var i = 0; i < 5; i++) {
+    //   fadeTime = (i + 1) * 1000;
+    //   $("#main-heading").fadeOut(fadeTime / 2).fadeIn(fadeTime / 2);
+    // }
+
+//exersise 3
+	$("h1").delay(3000);
+	$("h1").fadeOut(1000);
+	$("h1").fadeIn(1000);
+	$("h1").fadeTo(1000, 0.5);
+	$("h1").delay(3000);
+	$("h1").fadeTo(1000, 1);
+    
+    $("#main-heading").text("Мои друзья");
+
+    var friends = ["anna", "frank", "cole", "svit"];
+
+    for (var i = 0; i < friends.length; i++) {
+      $("body").append("<p>" + friends[i] + "</p>");
+      $("p").last().hide().delay((i + 1) * 10000).fadeIn(2000);
+    }
+
+    $("p").append(" лучший!");
+
+
+ </script>
+</body>
+</html>
