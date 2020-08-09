@@ -1,0 +1,37 @@
+.top-panel {
+	background-color: #222;
+	padding: 10px 0px;
+}
+
+.top-panel-content {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;	
+	color: #fff;
+	font-weight: bold;
+}
+
+.top-panel-content i {
+	position: relative;
+	font-size: 25px;
+	top: 3px;
+	margin-right: 5px;
+}
+
+.top-panel {
+    background-color: #222;
+    padding: 10px 0;
+}
+
+nav {
+	background: none;
+	box-shadow: none;
+}
+
+nav .brand-logo {
+	color: #000;
+}
+
+nav ul a {
+	color: #000;
+}
