@@ -90,8 +90,14 @@
 			// clearInterval(ClickerId);
 			intervalLength/=2;
 			clicks++;
-			alert(clicks);
-			});
+			// alert(clicks);
+
+		if (clicks > 10) {
+        $("#heading").text("Накликал-таки!");
+      } else {
+        ClickerId = setInterval(moveHeading, intervalLength)
+      }
+	});
 
 	 </script>
 </body>
