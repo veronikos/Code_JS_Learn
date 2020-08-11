@@ -12,6 +12,8 @@
 		
 		var offset = 0;
 		var movement = "right";
+		var intervalLength = 120;
+    	var clicks = 0;
 		
 		$("#heading").offset({left: offset, top: offset});
 
@@ -82,7 +84,14 @@
 
 		// };
 
-		setInterval (moveHeading, 10);
+		var ClickerId = setInterval(moveHeading, intervalLength);
+
+		$("#heading").click(function() {
+			// clearInterval(ClickerId);
+			intervalLength/=2;
+			clicks++;
+			alert(clicks);
+			});
 
 	 </script>
 </body>
