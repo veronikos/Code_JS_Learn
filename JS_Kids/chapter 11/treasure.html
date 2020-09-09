@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="UTF-8">
+ <title>Найди клад!</title>
+</head>
+<body>
+ <h1 id="heading"> Найди клад!</h1>
+	<img id="map" width=400 height=400 src="https://nostarch.com/images/treasuremap.png?__cf_chl_captcha_tk__=7b98dcfc20f97f4b7da1222dfdaf49ce449a2f54-1599645216-0-AYssrc3HjGedDHA3pPSjGqxxZh7qPxWXHVV_6ZBQtYtT0PJxlnJThgZxdVVwFDn3Vraymnjgoi71uwcQQZ_jIFw4YFngohJh1-8JGYO0LGRLrFzcGr01pab_3LOP6d_tBr66R2HZks4vPZUNQuO8s6V4u2bcU7j1behFHCyDXOHTm94kBJFGCASw7UanQ69N69uTWIgkVnahcT8mSD9eTPr1TNsGyZO7q0_MUyomOJnlHYgP7yqwTHvJ6XPYQZXuA2hxTF2px4IpFbICphrFtvQDNSDxKIP9tLUjmwO7FsluA3TkrXXOUk53pc7zg3973FxX5IEFml6F9JROrFvAH8O2c5kXVPc25pGxzIelKmqtM2cU0ROsMz3rII_7O6DXNNqF8zAlXZl_qbwL2OGnRCTwtKrEsSQUVstFCbhmQUGNWKvBh96Q3IOuB4d2UoCa-ytbCmnCSha-Wz9oFn-2-PClYJ9Cl81jYXzpu11YV7gmpk9Dn4HV7xznzDyWD3bERc-8KFisPBwifwTOWqheXIU">
+	<p id="distance"></p>
+ <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+ <script>
+ // Здесь код игры Найди клад!
+ 	var getRandomNumber = function (size) {
+	  return Math.floor(Math.random() * size);
+	};
+
+	var width = 400;
+	var height = 400;
+
+	// это координаты места, где зарыт клад
+	var target = {
+		x: getRandomNumber(width),
+		y: getRandomNumber (height)
+	};
+
+	// Создаем обработчик кликов по карте. 
+	$ ("#map").click (function (event) {
+
+	}) 
+
+ </script>
+</body>
+</html>
